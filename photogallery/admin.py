@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Image,Album,tags
+from .models import Photo,Category,Location
 
-class AlbumAdmin(admin.ModelAdmin):
-    filter_horizontal =('tags',)
+class ImageAdmin(admin.ModelAdmin):
+    filter_horizontal =('categories',)
 
-admin.site.register(Image)
-admin.site.register(Album,AlbumAdmin)
-admin.site.register(tags)
+admin.site.register(Location)
+admin.site.register(Photo,admin_class=ImageAdmin)
+admin.site.register(Category)
